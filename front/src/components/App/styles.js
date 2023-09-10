@@ -7,4 +7,7 @@ export const Container = styled.div`
     justify-content: space-between;
     height: ${window.innerHeight}px;
     flex: 1;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
 `;

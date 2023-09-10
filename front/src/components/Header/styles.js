@@ -5,9 +5,15 @@ export const Container = styled.header`
     margin-left: 40px;
     max-width: 400px;
     width: 100%;
-    background-color: ${({ theme }) => theme.backgroundColor};
+    /* background-color: ${({ theme }) => theme.backgroundColor}; */
     padding: ${({ theme }) => theme.padding}px;
     border-radius: 0px 0px 30px 30px;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-left: 0;
+        max-width: 100%;
+    }
 `;
 
 export const Logo = styled.div`
@@ -29,4 +35,15 @@ export const Logo = styled.div`
         font-weight: 400;
         line-height: normal;
     }
+
+`;
+
+export const pill = styled.button`
+    border-radius: 1000px;
+    display: flex;
+    padding: 6px 20px;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #3FFFAE;
+    background: #1E1E1E;
 `;
