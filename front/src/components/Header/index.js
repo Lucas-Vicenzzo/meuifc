@@ -1,9 +1,12 @@
-import { Container } from './styles';
+import { Container, Logo } from './styles';
 
 export default function Header() {
   return (
         <Container>
-          <h1>Meu IFC from header</h1>
+            <Logo>
+                <span>Olá, Bem Vindo(a) ao</span>
+                <h1>Meu IFC</h1>
+            </Logo>
         </Container>
   );
 }

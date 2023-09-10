@@ -5,6 +5,7 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing:border-box;
+        font-family: 'DM Sans', sans-serif;
 
     }
 
@@ -22,10 +23,6 @@ export default createGlobalStyle`
         height: 100vh;
         max-height: 100vh;
 
-        h1 {
-         color: red;
-        }
-
     }
     button {
         cursor: pointer;
@@ -37,5 +34,9 @@ export default createGlobalStyle`
         width: 100%;
         margin: 0 auto;
         position: absolute;
+        mix-blend-mode: luminosity;
+        box-sizing: border-box;
+        filter: invert(100%);
+
     }
 `;

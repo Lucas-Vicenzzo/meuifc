@@ -1,9 +1,15 @@
-import { Container } from './styles';
+import { Container, SearchContainer, DraggableHandle } from './styles';
+import handle from '../../assets/images/handle.svg';
 
 export default function Feed() {
   return (
     <Container>
-        <h1>Meu IFC from feed</h1>
+        <DraggableHandle>
+        <img src={handle} alt="handle" />
+        </DraggableHandle>
+        <SearchContainer>
+            <input type="text" placeholder="Pesquise no MEU IFC" />
+        </SearchContainer>
     </Container>
   );
 }
