@@ -29,23 +29,6 @@ export const Ambiente = model('Ambiente', new Schema({
             required: false
         }
     }],
-    turmas: [{
-        nome: {
-            type: String,
-            required: true
-        },
-        disciplinas: [{
-            nome: String,
-            horario: String,
-            diaSemana: String,
-            professores: [{
-                nome: {
-                    type: String,
-                    required: true
-                }
-            }]
-        }],
-    }],
     bloco: {
         type: Schema.Types.ObjectId,
         required: true,
@@ -57,35 +40,3 @@ export const Ambiente = model('Ambiente', new Schema({
         ref: 'Categoria'
     }
 }))
-
-
-
-
-// export const Ambiente = model('Ambiente', new Schema({
-//     name:{
-//         type: String,
-//         required: true,
-//     },
-//     icon:{
-//         type: String,
-//         required: true,
-//     },
-//     turmas:{
-//         required: true,
-//         type:[{
-//             name:{
-//                 type: String,
-//                 required: true,
-//             },
-//             aaaa:{
-//                 type: String,
-//                 required: true,
-//             }
-//         }]
-//     },
-//     status:{
-//         type: String,
-//         enum: ['Ô DEMORA', 'TA SAINDO CHEFIA', 'TA PRONTO VISSE'],
-//     }
-
-
