@@ -17,23 +17,23 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function Map() {
   return (
-    <MapContainer
-      center={[-27.01604780999165, -48.659008496965015]}
-      zoom={21}
-      scrollWheelZoom
-      zoomControl={false}
-    >
-      <TileLayer
-        key="tileLayer"
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={[-27.01604780999165, -48.659008496965015]}>
-        <Popup>
-          A pretty CSS3 popup.
-          <br />
-          Easily customizable.
-        </Popup>
-      </Marker>
-    </MapContainer>
+        <MapContainer
+          center={[-27.01604780999165, -48.659008496965015]}
+          zoom={18}
+          scrollWheelZoom
+          zoomControl={false}
+        >
+            <TileLayer
+              key="tileLayer"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[-27.01604780999165, -48.659008496965015]}>
+                <Popup>
+                    A pretty CSS3 popup.
+                    <br />
+                    Easily customizable.
+                </Popup>
+            </Marker>
+        </MapContainer>
   );
 }
