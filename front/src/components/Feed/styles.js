@@ -58,7 +58,7 @@ export const CategoryPill = styled.button`
     gap: 10px;
     border-radius: 1000px;
     border: 2px solid ${({ theme }) => theme.primary};
-    background: ${(props) => (props.click ? props.theme.primary : 'Transparent')};
+    background: transparent;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -66,9 +66,14 @@ export const CategoryPill = styled.button`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in;
+    color: ${({ theme }) => theme.textColor};
 
-    h3 {
-        color:  ${(props) => (props.click ? '#000' : '#FFF')};
+    &:hover {
+        background-color: ${({ theme }) => theme.primary};
+        color: ${({ theme }) => theme.backgroundColor};
+    }
+    &:active {
+        transform: scale(0.9);
     }
 `;

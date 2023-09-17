@@ -5,55 +5,25 @@ import {
 
 import Searchbar from '../Searchbar';
 import handle from '../../assets/images/handle.svg';
-
 import filterIcon from '../../assets/images/icons/Funnel.svg';
-
-const categories = [
-  {
-    id: 1,
-    name: 'Salas',
-  },
-  {
-    id: 2,
-    name: 'Banheiros',
-  },
-  {
-    id: 3,
-    name: 'Laboratórios',
-  },
-  {
-    id: 4,
-    name: 'Auditórios',
-  },
-  {
-    id: 5,
-    name: 'Biblioteca',
-  },
-
-];
+import { categories } from '../../mock';
 
 export default function Feed() {
-  const [click, setClick] = useState({});
+  const [select, setSelected] = useState(0);
 
-  function handleCategoryClick(id) {
-    setClick({
-      [id]: !click[id],
-    });
-  }
   return (
     <Container>
       <DraggableHandle>
         <img src={handle} alt="handle" />
       </DraggableHandle>
       <SearchContainer>
-        <Searchbar categories={categories} />
+        <Searchbar categories={categories} id={select} />
         <CategoriesContainer>
           <img src={filterIcon} alt="filtros" />
           <div>
             {categories.map((category) => (
               <CategoryPill
-                click={click[category.id]}
-                onClick={() => handleCategoryClick(category.id, category.name)}
+                onClick={() => setSelected(category.id)}
                 key={category.id}
               >
                 <h3>{category.name}</h3>
