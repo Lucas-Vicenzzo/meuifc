@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { listCategories } from "./app/useCases/categorias/listCategories";
-import { createCategory } from "./app/useCases/categorias/createCategory";
-import { deleteCategory } from "./app/useCases/categorias/deleteCategory";
+import { listarCategorias } from "./app/useCases/categorias/listarCategorias";
+import { criarCategoria } from "./app/useCases/categorias/criarCategoria";
+import { deletarCategoria } from "./app/useCases/categorias/deletarCategoria";
 
 export const router = Router();
 
 
 // List Categories
-router.get('/categorias', listCategories)
+router.get('/categorias', listarCategorias)
 
 // Create Category
-router.post('/categorias', createCategory)
+router.post('/categorias', criarCategoria)
 
 // Ambientes Por Categoria
 router.get('/categorias/:id/ambientes', (req, res) => {
@@ -18,4 +18,4 @@ router.get('/categorias/:id/ambientes', (req, res) => {
 })
 
 // Remover Categoria
-router.delete('/categorias/:id', deleteCategory)
+router.delete('/categorias/:id', deletarCategoria)

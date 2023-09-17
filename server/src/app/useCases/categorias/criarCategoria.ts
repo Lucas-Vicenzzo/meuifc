@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { Categoria } from '../../models/Categoria';
 
-export async function createCategory(req:Request, res: Response) {
+export async function criarCategoria(req:Request, res: Response) {
   try {
     const { name } = req.body;
 
