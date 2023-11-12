@@ -7,10 +7,12 @@ export const Turma = model('Turma', new Schema({
         required: true
     },
 
-    disciplinas: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref: 'Disciplina'
-    },
+    disciplinas: [
+        {
+            type: Schema.Types.ObjectId,
+            required: true,
+            ref: 'Disciplina'
+        }
+    ]
 
 }))

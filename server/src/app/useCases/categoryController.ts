@@ -12,7 +12,6 @@ export async function criarCategoria(req:Request, res: Response) {
     //   console.log(`Erro ao criar categoria ${nome} pois ${error}`)
     //   res.send(`O item ${nome} já existe caraio`)
     // }
-
   }
 
 

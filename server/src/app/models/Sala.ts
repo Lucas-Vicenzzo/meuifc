@@ -4,12 +4,13 @@ export const Sala = model('Sala', new Schema({
   nome: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    dropDubs: true
   },
   nomesAlt: [{
     nome: {
       type: String,
-      required: false
+      required: true
     }
   }],
   latitude: {
