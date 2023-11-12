@@ -16,22 +16,32 @@ export const Container = Styled.div`
     transition: all ease-in 0.3s;
     overflow: hidden;
     max-height: 75px;
+
+    input {
+      transition: all ease-in 0.3s;
+      background: transparent;
+
+        &:focus {
+          outline: none;
+          border-color: ${({ theme }) => theme.primary};
+        }
+      }
 `;
 
 export const InnerContainer = Styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #fff;
   gap: 8px;
   flex-grow: 1;
   height: 75px;
-  font-family: DM Sans;
   font-size: 19px;
 
   h3 {
       transition: all ease-in 0.3s;
       color: #FFF;
-      font-family: DM Sans;
+      font-family: 'DM Sans', sans-serif ;
       font-size: 19px;
       font-style: normal;
       font-weight: 400;
@@ -44,15 +54,6 @@ export const InnerContainer = Styled.div`
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      display: block;
     }
-
-    input {
-      transition: all ease-in 0.3s;
-      background: transparent;
-
-        &:focus {
-          outline: none;
-          border-color: ${({ theme }) => theme.primary};
-        }
-      }
 `;
