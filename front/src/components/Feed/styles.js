@@ -42,7 +42,7 @@ export const CategoriesContainer = styled.div`
         display: flex;
         flex-direction: row;
         gap: 10px;
-        overflow: scroll hidden;
+        overflow: scroll;
         position: relative;
         &::-webkit-scrollbar {
         display: none;
@@ -68,6 +68,7 @@ export const CategoryPill = styled.button`
     user-select: none;
     transition: all 0.1s ease-in;
     color: ${({ theme }) => theme.textColor};
+    white-space: nowrap;
 
     &:hover {
         background-color: ${({ theme }) => theme.primary};

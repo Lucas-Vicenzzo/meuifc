@@ -5,7 +5,5 @@ export const Categoria = model('Categoria', new Schema({
     type: String,
     required: true,
     unique: true,
-    dropDups: true
   }
-
 }))

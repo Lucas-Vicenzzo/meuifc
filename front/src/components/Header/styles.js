@@ -5,9 +5,11 @@ export const Container = styled.header`
     margin-left: 40px;
     max-width: 400px;
     width: 100%;
-    /* background-color: ${({ theme }) => theme.backgroundColor}; */
+    background-color: ${({ theme }) => theme.transparentBackground};
     padding: ${({ theme }) => theme.padding}px;
     border-radius: 0px 0px 30px 30px;
+    backdrop-filter: ${({ theme }) => theme.blur};
+
 
     @media screen and (max-width: 768px) {
         width: 100%;

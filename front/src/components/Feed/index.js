@@ -1,15 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Searchbar from '../Searchbar';
 import {
   Container, SearchContainer, DraggableHandle, CategoriesContainer, CategoryPill,
 } from './styles';
 
-import Searchbar from '../Searchbar';
 import handle from '../../assets/images/handle.svg';
 import filterIcon from '../../assets/images/icons/Funnel.svg';
-import { categories } from '../../mock';
 
 export default function Feed() {
-  const [select, setSelected] = useState(0);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:4000/categorias')
+      .then(async (response) => {
+        const data = await response.json();
+        setCategories(data);
+      });
+  }, []);
 
   return (
     <Container>
@@ -17,16 +24,13 @@ export default function Feed() {
         <img src={handle} alt="handle" />
       </DraggableHandle>
       <SearchContainer>
-        <Searchbar categories={categories} id={select} />
+        <Searchbar />
         <CategoriesContainer>
           <img src={filterIcon} alt="filtros" />
           <div>
             {categories.map((category) => (
-              <CategoryPill
-                onClick={() => setSelected(category.id)}
-                key={category.id}
-              >
-                <h3>{category.name}</h3>
+              <CategoryPill key={category.id}>
+                <h3>{category.nome}</h3>
               </CategoryPill>
             ))}
           </div>
