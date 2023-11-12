@@ -1,0 +1,30 @@
+GET http://127.0.0.1:3000/categorias HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "Categoria teste"
+}
+
+###
+
+POST http://127.0.0.1:3000/categorias HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "Categoria teste 5"
+}
+
+
+###
+POST http://127.0.0.1:3000/ambientes HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "Ambiente teste 3",
+    "categoria": "65505e369bfb11c63db5bb55"
+}
+
+###
+
+GET http://127.0.0.1:3000/categorias/65505e369bfb11c63db5bb55/ambientes HTTP/1.1
+Content-Type: application/json

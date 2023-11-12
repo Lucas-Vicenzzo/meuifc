@@ -8,7 +8,7 @@ export const Ambiente = model('Ambiente', new Schema({
     nomesAlt: [{
         nome: {
             type: String,
-            required: true
+            required: false,
         }
     }],
     latitude: {
@@ -31,7 +31,7 @@ export const Ambiente = model('Ambiente', new Schema({
     }],
     bloco: {
         type: Schema.Types.ObjectId,
-        required: true,
+        required: false,
         ref: 'Bloco'
     },
     categoria: {

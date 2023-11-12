@@ -1,36 +1,39 @@
 import { Router } from "express";
-import { listarCategorias } from "./app/useCases/categorias/listarCategorias";
-import { criarCategoria } from "./app/useCases/categorias/criarCategoria";
-import { deletarCategoria } from "./app/useCases/categorias/deletarCategoria";
-import { listarSalas } from "./app/useCases/salas/listarSalas";
-import { criarSala } from "./app/useCases/salas/criarSala";
-import { deletarSala } from "./app/useCases/salas/deletarSala";
+
+import categoryController from "./app/useCases/categoryController";
+import salasController from "./app/useCases/salasController";
+import ambieneController from "./app/useCases/ambienteController";
 
 export const router = Router();
 
 
 // Categorias
-// List Categories
-router.get('/categorias', listarCategorias)
-
-// Create Category
-router.post('/categorias', criarCategoria)
-
-// Ambientes Por Categoria
-router.get('/categorias/:id/ambientes', (req, res) => {
-  res.send('Listando ambientes a partir da categoria')
+router.get('/', (req, res) => {
+    res.send('Hello World!')
 })
 
-// Remover Categoria
-router.delete('/categorias/:id', deletarCategoria)
+// List Categories
+router.get('/categorias', categoryController.listarCategorias)
 
+
+// Create Category
+router.post('/categorias', categoryController.criarCategoria)
+
+// Remover Categoria
+router.delete('/categorias/:id', categoryController.deletarCategoria)
+
+// Cadastrar Ambiente
+router.post('/ambientes', ambieneController.criarAmbiente)
+
+// Mostrar Ambientes por Categoria
+router.get('/categorias/:id/ambientes', ambieneController.listarAmbientes)
 
 // Salas
 // Listar Salas
-router.get('/salas', listarSalas)
+router.get('/salas', salasController.listarSalas)
 
 // Criar Sala
-router.post('/salas', criarSala)
+router.post('/salas', salasController.criarSala)
 
 // Remover Sala
-router.delete('/salas/:id', deletarSala)
+router.delete('/salas/:id', salasController.deletarSala)

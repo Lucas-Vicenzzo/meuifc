@@ -34,9 +34,10 @@ export default createGlobalStyle`
         width: 100%;
         margin: 0 auto;
         position: absolute;
-        mix-blend-mode: luminosity;
+        /* mix-blend-mode: luminosity;
         box-sizing: border-box;
-        filter: invert(100%);
+        filter: invert(100%); */
+        background-color: #23283a;
 
     }
 `;
