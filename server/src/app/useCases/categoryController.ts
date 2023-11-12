@@ -5,15 +5,13 @@ import { Categoria } from '../models/Categoria';
 // Criar Categoria
 export async function criarCategoria(req:Request, res: Response) {
     const { nome } = req.body;
-    try {
       const categoria = await Categoria.create({nome});
       res.json(categoria);
 
-    }
-    catch (error) {
-      console.log(`Erro ao criar categoria ${nome} pois ${error}`)
-      res.send(`O item ${nome} já existe caraio`)
-    }
+    // catch (error) {
+    //   console.log(`Erro ao criar categoria ${nome} pois ${error}`)
+    //   res.send(`O item ${nome} já existe caraio`)
+    // }
   }
 
 

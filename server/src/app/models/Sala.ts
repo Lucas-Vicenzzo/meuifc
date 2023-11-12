@@ -6,7 +6,7 @@ export const Sala = model('Sala', new Schema({
     required: true,
     unique: true,
     dropDubs: true
-  }, 
+  },
   nomesAlt: [{
     nome: {
       type: String,
@@ -31,26 +31,16 @@ export const Sala = model('Sala', new Schema({
       required: false
     }
   }],
+
   turmas: [{
-    nome: {
-      type: String,
-      required: true
-    },
-    disciplinas: [{
-      nome: String,
-      horario: String,
-      diaSemana: String,
-      professores: [{
-        nome: {
-          type: String,
-          required: true
-        }
-      }]
-    }],
+    type: Schema.Types.ObjectId,
+    required: false,
+    ref: 'Turma'
   }],
+
   bloco: {
     type: Schema.Types.ObjectId,
-    required: true,
+    required: false,
     ref: 'Bloco'
   },
   categoria: {
