@@ -10,10 +10,9 @@ Content-Type: application/json
     "nome": "12323131223123"
 }
 
-
 ###
 
-DELETE http://127.0.0.1:3000/categorias/6550709a35d9d695698d0e33 HTTP/1.1
+DELETE http://127.0.0.1:3000/categorias/6551015b0535c82560e80f51 HTTP/1.1
 
 
 ###
@@ -21,6 +20,7 @@ DELETE http://127.0.0.1:3000/categorias/6550709a35d9d695698d0e33 HTTP/1.1
 GET http://127.0.0.1:3000/salas HTTP/1.1
 
 ###
+
 POST http://127.0.0.1:3000/salas HTTP/1.1
 Content-Type: application/json
 
@@ -33,3 +33,77 @@ Content-Type: application/json
 
 GET http://127.0.0.1:3000/categorias/65507e4fc8f2135895bd9599/salas HTTP/1.1
 Content-Type: application/json
+
+### 
+
+GET http://127.0.0.1:3000/professor HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:3000/professor HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "Bananilson Farofa"
+}
+
+###
+
+DELETE http://127.0.0.1:3000/professor/655102690535c82560e80f60 HTTP/1.1
+
+###
+
+GET http://127.0.0.1:3000/disciplina HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:3000/disciplina HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "POO",
+    "horario": "13:30-18:30",
+    "diaSemana": "seg",
+    "professores": "655102520535c82560e80f5d"
+}
+
+###
+
+DELETE http://127.0.0.1:3000/disciplina/655111e4afb3f4b14c807b7a HTTP/1.1
+
+###
+
+GET http://127.0.0.1:3000/andar HTTP/1.1
+
+###
+
+POST http://127.0.0.1:3000/andar HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "térreo"
+}
+
+###
+
+DELETE http://127.0.0.1:3000/andar/65511a6bcc4d25dbf0ebcfa5 HTTP/1.1
+
+###
+
+GET http://127.0.0.1:3000/turma HTTP/1.1
+
+###
+
+POST http://127.0.0.1:3000/turma HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "BSI21",
+    "disciplinas": "6551158904d0d24de0cf93f3"
+}
+
+###
+
+DELETE http://127.0.0.1:3000/bloco/65511c96c894171ca202ad3a HTTP/1.1
