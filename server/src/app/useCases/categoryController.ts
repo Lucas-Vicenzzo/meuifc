@@ -4,36 +4,37 @@ import { Categoria } from '../models/Categoria';
 
 // Criar Categoria
 export async function criarCategoria(req:Request, res: Response) {
+    const { nome } = req.body;
     try {
-      const { name } = req.body;
+      const categoria = await Categoria.create({nome});
+      res.json(categoria);
 
-      const categoria = await Categoria.create({name});
-
-    res.json(categoria);
-    } catch (error){
-      const { name } = req.body;
-      console.log(`Erro ao criar categoria ${name} pois ${error}`)
-      res.send(`O item ${name} já existe caraio`)
+    }
+    catch (error) {
+      console.log(`Erro ao criar categoria ${nome} pois ${error}`)
+      res.send(`O item ${nome} já existe caraio`)
     }
   }
 
 
-
-
-// Deletar Categoria
+  // Deletar Categoria
 export async function deletarCategoria(req:Request, res: Response) {
-    const { id } = req.params;
+    const body = req.params;
 
-    await Categoria.findByIdAndDelete(id)
-    res.send(`deletado ${id}`)
+    await Categoria.findByIdAndDelete(body.id)
+    res.send(`deletado ${body.id}`)
+
   }
+
 
 // Listar Categorias
 export async function listarCategorias(req:Request, res: Response) {
     const categorias = await Categoria.find();
 
-    res.json(categorias);
+    categorias.length === 0
+    ? res.send('Não há categorias cadastradas')
+    : res.json(categorias);
 
 }
 
-export default { criarCategoria, deletarCategoria, listarCategorias}
+export default { criarCategoria, deletarCategoria, listarCategorias }

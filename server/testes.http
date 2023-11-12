@@ -1,18 +1,19 @@
 GET http://127.0.0.1:3000/categorias HTTP/1.1
 Content-Type: application/json
 
-{
-    "nome": "Categoria teste"
-}
-
 ###
 
 POST http://127.0.0.1:3000/categorias HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome": "Categoria teste 5"
+    "nome": "Categoria teste 1"
 }
+
+
+###
+
+DELETE http://127.0.0.1:3000/categorias/6550709a35d9d695698d0e33 HTTP/1.1
 
 
 ###
