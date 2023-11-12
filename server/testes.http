@@ -7,7 +7,7 @@ POST http://127.0.0.1:3000/categorias HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome": "1231231235wdf"
+    "nome": "12323131223123"
 }
 
 
