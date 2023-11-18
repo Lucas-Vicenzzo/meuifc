@@ -11,7 +11,9 @@ export default function Feed() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/categorias')
+    fetch('http://localhost:3000/categorias', {
+      mode: 'no-cors',
+    })
       .then(async (response) => {
         const data = await response.json();
         setCategories(data);

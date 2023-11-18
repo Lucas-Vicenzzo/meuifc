@@ -24,7 +24,7 @@ export default function Map() {
     >
       <TileLayer
         key="tileLayer"
-        url="https://supreme-carnival-v7rgppw7jwpcpwgj-3001.app.github.dev/{z}/{x}/{y}.png"
+        url="https://glowing-space-eureka-6xvp6wq7442qgx-3001.app.github.dev/{z}/{x}/{y}.png"
         maxZoom={22}
       />
       <Marker position={[-27.01604780999165, -48.659008496965015]}>
