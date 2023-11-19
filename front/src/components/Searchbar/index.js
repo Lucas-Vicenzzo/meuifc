@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { InnerContainer, Container } from './style';
 import magnifierIcon from '../../assets/images/icons/MagnifyingGlass.svg';
 
@@ -16,16 +16,23 @@ function useOutsideClick(ref, setActive) {
   }, [ref]);
 }
 
-export default function Searchbar({ categoria }) {
+export default function Searchbar({
+  categoria, currentRef, salas, setSearch,
+}) {
   const [active, setActive] = useState(false);
-  const containerRef = useRef(null);
-  useOutsideClick(containerRef, setActive);
+  useOutsideClick(currentRef, setActive);
   const handleActive = () => {
     setActive(!active);
   };
 
+  const handleInput = (e, salas, setSearch) => {
+    if (e.key === 'Enter') {
+      setSearch(salas.find((sala) => sala.nome === e.target.value));
+    }
+  };
+
   return (
-    <Container ref={containerRef} active={active}>
+    <Container active={active}>
       <InnerContainer active={active} onClick={handleActive}>
       <img src={magnifierIcon} alt="magnifier" />
         <div>
@@ -33,7 +40,12 @@ export default function Searchbar({ categoria }) {
           <span>{categoria ? categoria.nome : 'Meu IFC'}</span>
         </div>
       </InnerContainer>
-      <input type="text" name="Search" placeholder="Pesquise aqui"/>
+      <input
+        type="text"
+        name="Search"
+        placeholder="Pesquise aqui"
+        onKeyDown={(e) => handleInput(e, salas, setSearch)}
+      />
     </Container>
   );
 }

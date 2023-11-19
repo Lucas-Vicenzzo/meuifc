@@ -29,6 +29,8 @@
         "react/jsx-tag-spacing": "off",
         "no-confusing-arrow": "off",
         "arrow-parens": "off",
-        "react/button-has-type": "off"
+        "react/button-has-type": "off",
+        "block-spacing": "off",
+        "no-shadow": "off"
     }
 }
