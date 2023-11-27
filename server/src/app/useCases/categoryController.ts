@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Categoria } from '../models/Categoria';
+import { Sala } from '../models/Sala';
 
 
 // Criar Categoria
@@ -37,5 +38,23 @@ export async function listarCategorias(req:Request, res: Response) {
     : res.json(categorias);
 
 }
+export async function listarCategoriasUnicas(req: Request, res: Response) {
+  const categorias = await Sala.aggregate([
+    {
+      $group: {
+        _id: "$categoria"
+      }
+    },
+    {
+      $project: {
+        _id: 0,
+        categoria: "$_id"
+      }
+    }
+  ])
+  categorias.length === 0 
+  ? res.send('Não Há Categorias cadastradas')
+  : res.json(categorias)
+}
 
-export default { criarCategoria, deletarCategoria, listarCategorias }
+export default { criarCategoria, deletarCategoria, listarCategorias, listarCategoriasUnicas }

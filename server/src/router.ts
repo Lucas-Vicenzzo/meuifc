@@ -23,6 +23,9 @@ router.get('/', (req, res) => {
 // List Categories
 router.get('/categorias', categoryController.listarCategorias)
 
+// Listar Categorias Unicas
+router.get('/categorias-unicas', categoryController.listarCategoriasUnicas)
+
 
 // Create Category
 router.post('/categorias', categoryController.criarCategoria)
