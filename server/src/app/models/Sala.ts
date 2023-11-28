@@ -35,17 +35,53 @@ export const Sala = model('Sala', new Schema({
   turmas: [{
     type: Schema.Types.ObjectId,
     required: false,
-    ref: 'Turma'
+    
+    nome: {
+      type: String,
+      required: true,
+      unique: true,
+      dropDubs: true
+    },
+
+    disciplinas:[{
+      nome: {
+          type: String,
+          required: true
+      },
+  
+      horario: {
+          type: String,
+          required: false
+      },
+  
+      diaSemana: {
+          type: String,
+          required: false
+      },
+  
+      professores: [
+          {
+              nome: {
+              type: String,
+              required: true,
+              unique: true,
+              dropDubs: true
+            },
+          }
+      ],
+    }],
   }],
 
   bloco: {
-    type: Schema.Types.ObjectId,
-    required: false,
-    ref: 'Bloco'
+    type: String,
+    required: true,
+    unique: true,
+    dropDubs: true
   },
   categoria: {
-    type: Schema.Types.ObjectId,
+    type: String,
     required: true,
-    ref: 'Categoria'
+    unique: true,
+    dropDubs: true
   }
 }))
